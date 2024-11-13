@@ -1,0 +1,19 @@
+# EnigmaIRC Server server address and port
+server-address: ""
+server-port: 6667
+
+# What messages from EIRC will look like in the game
+# Supports Kyori's MiniMessage (read more at https://docs.advntr.dev/minimessage/format.html)
+# message-format - for user messages
+# session-format - for join/leave messages
+message-format: "[EIRC] <user> - <message>"
+session-format: "[EIRC] <user> <status>"
+
+# Under what name messages will be sent to other users
+# Only normal text is supported (no formatting)
+# Use <user> placeholder to put player's name
+player-name-format: "[MC] <user>"
+
+# Client encryption key
+# Generate new one using real client
+security-key: ""
