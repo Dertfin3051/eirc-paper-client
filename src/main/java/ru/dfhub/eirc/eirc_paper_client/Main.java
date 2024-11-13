@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.dfhub.eirc.eirc_paper_client.client.ServerConnection;
 import ru.dfhub.eirc.eirc_paper_client.client.util.Encryption;
+import ru.dfhub.eirc.eirc_paper_client.handler.JoinLeaveHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,6 +49,8 @@ public final class Main extends JavaPlugin {
             getPluginManager().disablePlugin(this);
             return;
         }
+
+        getPluginManager().registerEvents(new JoinLeaveHandler(), this);
     }
 
     @Override
