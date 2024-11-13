@@ -1,13 +1,12 @@
 package ru.dfhub.eirc.eirc_paper_client;
 
 import net.kyori.adventure.text.Component;
-import org.apache.logging.log4j.LogManager;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.dfhub.eirc.eirc_paper_client.client.ServerConnection;
 import ru.dfhub.eirc.eirc_paper_client.client.util.Encryption;
 import ru.dfhub.eirc.eirc_paper_client.handler.JoinLeaveHandler;
+import ru.dfhub.eirc.eirc_paper_client.handler.GameMessageHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +50,7 @@ public final class Main extends JavaPlugin {
         }
 
         getPluginManager().registerEvents(new JoinLeaveHandler(), this);
+        getPluginManager().registerEvents(new GameMessageHandler(), this);
     }
 
     @Override
