@@ -1,7 +1,9 @@
 {
   "type" : "user-message",
+
   "content" : {
     "user" : "%user%",
-    "message" : "%message%"
+    "message" : "%message%",
+    "minecraft-ingame" : true
   }
 }

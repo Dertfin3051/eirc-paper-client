@@ -108,6 +108,8 @@ public class DataParser {
         String sender = data.getString("user");
         String encryptedMessage = data.getString("message"); // In ftr, decrypt and handle decryption errors here
 
+        if (data.optBoolean("minecraft-ingame", false)) return; // Don't show inGame messages
+
         String message;
         try {
             message = Encryption.decrypt(encryptedMessage);
@@ -132,6 +134,8 @@ public class DataParser {
     private static void handleUserSession(JSONObject data) {
         String user = data.getString("user");
         String status = data.getString("status").equals("join") ? "joined!" : "left.";
+
+        if (data.optBoolean("minecraft-ingame", false)) return; // Don't show inGame messages
 
         String formattedMessage = Main.getInstance().getConfig().getString("session-format")
                 .replace("<user>", user)

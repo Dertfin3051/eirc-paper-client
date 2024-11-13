@@ -1,7 +1,9 @@
 {
   "type" : "user-session",
+
   "content" : {
     "user" : "%user%",
-    "status" : "%status%"
+    "status" : "%status%",
+    "minecraft-ingame" : true
   }
 }
