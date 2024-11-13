@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import ru.dfhub.eirc.eirc_paper_client.client.DataParser;
 
-public class JoinLeaveHandler implements Listener {
+public class GameSessionHandler implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
