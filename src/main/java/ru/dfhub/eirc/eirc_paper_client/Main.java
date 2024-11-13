@@ -3,6 +3,7 @@ package ru.dfhub.eirc.eirc_paper_client;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.dfhub.eirc.eirc_paper_client.client.DataParser;
 import ru.dfhub.eirc.eirc_paper_client.client.ServerConnection;
 import ru.dfhub.eirc.eirc_paper_client.client.util.Encryption;
 import ru.dfhub.eirc.eirc_paper_client.handler.GameSessionHandler;
@@ -51,11 +52,19 @@ public final class Main extends JavaPlugin {
 
         getPluginManager().registerEvents(new GameSessionHandler(), this);
         getPluginManager().registerEvents(new GameMessageHandler(), this);
+
+        DataParser.handleOutputSession(
+                true,
+                getConfig().getString("server-name", "Paper Server")
+        );
     }
 
     @Override
     public void onDisable() {
-
+        DataParser.handleOutputSession(
+                false,
+                getConfig().getString("server-name", "Paper Server")
+        );
     }
 
     public static Logger logger() {

@@ -14,6 +14,11 @@ session-format: "[EIRC] <user> <status>"
 # Use <user> placeholder to put player's name
 player-name-format: "[MC] <user>"
 
+# What is the name of the server?
+# This name will be seen by other participants in the conversation when the server is turned on/off
+#
+server-name : "Paper Server"
+
 # Client encryption key
 # Generate new one using real client
 security-key: ""
